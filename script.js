@@ -67,7 +67,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     h4goldenHour.textContent = `Golden Hour is at ${goldenHour}`;
                     h4sunset.textContent = `Sunset is at ${sunset}`;
                 };
-            }, 1001);
+            }, 999);
         })
         .catch(error => console.error('Error:', error));
     });
