@@ -1,0 +1,19 @@
+{
+    "permissions": [
+        "activeTab"
+    ],
+    "name": "name",
+    "version": "1.0.0",
+    "description": "desc",
+    "manifest_version": 3,
+    "action":{
+        "default_popup": "index.html",
+        "default_title": "title"
+    },
+    "content_scripts": [
+        {
+            "matches": ["<all_urls>"],
+            "js": ["script.js"]
+        }
+    ]
+}
