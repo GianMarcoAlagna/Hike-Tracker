@@ -9,15 +9,18 @@
         <div class="textContainer">
             <form class="text-form" autocomplete="off">
                 <div>
-                    <input id="long" type="text">
-                    <input id="lat" type="text">
+                    <input id="lat" type="text" placeholder="Latitude">
+                    <input id="long" type="text" placeholder="Longitude">
                 </div>
                 <div>
-                    <input id="sub" type="submit" value="Go">
+                    <input id="hikeTime" type="text" placeholder="Time to hike (hh:mm)">
+                </div>
+                <div id="go-button">
+                    <input id="sub" type="submit" value="GO">
                 </div>
             </form>
         </div>
-        <div class="text"></div>
     </body>
+    <script src="node_modules/moment/moment.js"></script>
     <script src="script.js"></script>
 </html>
