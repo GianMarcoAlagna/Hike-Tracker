@@ -39,14 +39,20 @@ document.addEventListener('DOMContentLoaded', () => {
                 document.body.appendChild(info);
                 
                 const authors = document.createElement('small')
-                authors.innerHTML = 'Made by: <a href="https://github.com/GianMarcoAlagna" style="display:block">Frontend: Gian-Marco</a><a href="https://github.com/mannish-boy" style="display:block">Backend: Michael</a>'
-
+                authors.innerHTML = 'Made by: <a id="credLink" href="https://github.com/GianMarcoAlagna" style="display:block">Frontend: Gian-Marco</a><a id="credLink" href="https://github.com/mannish-boy" style="display:block">Backend: Michael</a>'
+                
                 info.appendChild(firstHeader);
                 info.appendChild(h4sunrise);
                 info.appendChild(h4goldenHour);
                 info.appendChild(h4sunset);
                 info.appendChild(authors);
                 document.body.appendChild(info);
+                
+                document.querySelector('#credLink').addEventListener('click', (e) => {
+                    chrome.tabs.create({url: e.target.getAttribute('href')})
+                    return false;
+                });
+
                 if (hikeTime){
                     //modifying the fetched times with inputted hike times
                     const [hours, minutes] = hikeTime.split(':');
@@ -56,7 +62,6 @@ document.addEventListener('DOMContentLoaded', () => {
                     h4goldenHour.textContent = `Golden Hour: Start at ${leaveGoldenHour}`;
                     const leaveSunset = moment(sunset, 'h:mm:ss A').subtract(hours, 'hours').subtract(minutes, 'minutes').format('h:mm:ss A');
                     h4sunset.textContent = `Sunset: Leave by ${leaveSunset} to return before sunset`;
-                
                 } else {
                     h4sunrise.textContent = `Sunrise is at ${sunrise}`;
                     h4goldenHour.textContent = `Golden Hour is at ${goldenHour}`;
@@ -66,6 +71,7 @@ document.addEventListener('DOMContentLoaded', () => {
         })
         .catch(error => console.error('Error:', error));
     });
+
 });
 
 
