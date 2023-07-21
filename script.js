@@ -28,20 +28,24 @@ document.addEventListener('DOMContentLoaded', () => {
                 const firstHeader = document.createElement('h3')
                 firstHeader.textContent = "For current parameters:"
         
-                const h4sunrise = document.createElement('h4');
+                const h4sunrise = document.createElement('h3');
                 h4sunrise.id = 'sunrise';
         
-                const h4goldenHour = document.createElement('h4');
+                const h4goldenHour = document.createElement('h3');
                 h4goldenHour.id = 'goldenHour';
         
-                const h4sunset = document.createElement('h4');
+                const h4sunset = document.createElement('h3');
                 h4sunset.id = 'sunrise';
                 document.body.appendChild(info);
                 
+                const authors = document.createElement('small')
+                authors.innerHTML = 'Made by: <a href="https://github.com/GianMarcoAlagna" style="display:block">Frontend: Gian-Marco</a><a href="https://github.com/mannish-boy" style="display:block">Backend: Michael</a>'
+
                 info.appendChild(firstHeader);
                 info.appendChild(h4sunrise);
                 info.appendChild(h4goldenHour);
                 info.appendChild(h4sunset);
+                info.appendChild(authors);
                 document.body.appendChild(info);
                 if (hikeTime){
                     //modifying the fetched times with inputted hike times

@@ -13,7 +13,7 @@ body {
 }
 
 body * {
-    margin-top: 20px;
+    margin-top: 10px;
 }
 
 input {
@@ -62,8 +62,8 @@ input:active {
         transform: translateX(400px);
     }
     to {
-        width: 250px;
-        height: 250px;
+        width: 270px;
+        height: 270px;
         margin: 10;
         opacity: 1;
         transform: translateX(0px);
@@ -88,8 +88,8 @@ input:active {
 .info-box {
     animation: open-info 5s;
     border-radius: 5px;
-    width: 250px;
-    height: 250px;
+    width: 270px;
+    height: 270px;
     background: rgba(13, 13, 13, 0.555);
     border: 1px solid rgb(255, 255, 255);
     color: white;
@@ -115,7 +115,18 @@ input:active {
 
 
 
-h4, h3 {
+h3 {
     animation: fade-in 5s;
     opacity: 1;
+}
+
+a {
+    text-decoration: none;
+    color: rgb(43, 124, 255);
+}
+
+a:hover {
+    text-decoration: underline;
+    font-size: large;
+    color: rgb(43, 124, 255);
 }
