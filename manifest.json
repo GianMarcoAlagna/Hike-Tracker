@@ -2,9 +2,9 @@
     "permissions": [
         "activeTab"
     ],
-    "name": "name",
+    "name": "Hike-Tracker",
     "version": "1.0.0",
-    "description": "desc",
+    "description": "Hike-Tracker",
     "manifest_version": 3,
     "action":{
         "default_popup": "index.html",
