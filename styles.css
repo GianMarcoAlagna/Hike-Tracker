@@ -5,16 +5,17 @@ html, body {
 }
 
 body {
-    width: 300px;
+    width: 350px;
     height: 300px;
     background-image: url(./forest.jpeg);
     display: flex;
     flex-direction: column;
     align-items: center;
+    overflow-y: hidden;
 }
 
 body * {
-    margin-top: 10px;
+    margin-top: 5px;
 }
 
 @keyframes open-info {
@@ -90,7 +91,7 @@ input[type*='text'] {
     background-color: rgba(0, 0, 0, 0.525);
     border-radius: 5px;
     border: 2px solid black;
-    height: 45px;
+    height: 34px;
     width: 225px;
     text-align: center;
 }
@@ -107,6 +108,12 @@ input[type*='text'] {
 #sub {
     width: 100px;
     height: 35px;
+    font-size: large;
+}
+
+#sub:active {
+    width: 95px;
+    height: 32px;
     font-size: large;
 }
 

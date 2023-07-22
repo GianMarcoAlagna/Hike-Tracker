@@ -22,7 +22,10 @@ document.addEventListener('DOMContentLoaded', () => {
             invalid.id = 'invalid';
             invalid.textContent = 'Invalid Input please enter a decimal number';
             invalid.style = 'font-weight: bold; color: red; font-size: small; -webkit-text-stroke: 0.7px black;';
-            document.querySelector('.text-form').appendChild(invalid);
+
+            if(document.querySelector('#invalid')) return false;
+            else document.querySelector('.text-form').appendChild(invalid);
+
             setTimeout(() => {
                 invalid.remove();
             }, 3000)
@@ -35,7 +38,7 @@ document.addEventListener('DOMContentLoaded', () => {
             .then(response => response.json())
             .then(data => {
                 const form = document.querySelector('.text-form');
-                form.style.animation = 'close-form 1s';
+                form.style.animation = 'close-form 2s';
     
                 const sunrise = data.results.sunrise
                 const goldenHour = data.results.golden_hour
@@ -48,16 +51,16 @@ document.addEventListener('DOMContentLoaded', () => {
                     const info = document.createElement('div');
                     info.classList.add('info-box');
     
-                    const firstHeader = document.createElement('h3')
+                    const firstHeader = document.createElement('h2')
                     firstHeader.textContent = "For current parameters:"
             
-                    const h4sunrise = document.createElement('h3');
+                    const h4sunrise = document.createElement('h2');
                     h4sunrise.id = 'sunrise';
             
-                    const h4goldenHour = document.createElement('h3');
+                    const h4goldenHour = document.createElement('h2');
                     h4goldenHour.id = 'goldenHour';
             
-                    const h4sunset = document.createElement('h3');
+                    const h4sunset = document.createElement('h2');
                     h4sunset.id = 'sunrise';
                     document.body.appendChild(info);
                     
@@ -95,7 +98,7 @@ document.addEventListener('DOMContentLoaded', () => {
                         chrome.tabs.create({url: e.target.getAttribute('href')})
                         return false;
                     });
-                }, 888);
+                }, 1000);
             })
             .catch(error => console.error('Error from response:', error));
         } catch(error) {
