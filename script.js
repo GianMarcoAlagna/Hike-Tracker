@@ -1,11 +1,21 @@
 document.addEventListener('DOMContentLoaded', () => {
+
+    const mainLink = function() {
+        chrome.tabs.create({url: this.getAttribute('href')});
+        return false;
+    }
+
+    const link = document.querySelector('#main-link');
+    link.onclick = mainLink;
+
     document.querySelector('.text-form').addEventListener('submit', (e) => {
         e.preventDefault();
 
         const lat = document.querySelector('#lat').value;
         const long = document.querySelector('#long').value;
         const hikeTime = document.querySelector('#hikeTime').value;
-        console.log(hikeTime)
+        console.log(hikeTime);
+
 
         if(isNaN(Number(lat)) || isNaN(Number(long)) || Number(lat) === Math.floor(Number(lat)) || Number(long) === Math.floor(Number(long)) || lat === '' || long === '') {
             const invalid = document.createElement('h1');
@@ -61,10 +71,10 @@ document.addEventListener('DOMContentLoaded', () => {
                     info.appendChild(authors);
                     document.body.appendChild(info);
                     
-                    document.querySelector('#credLink').addEventListener('click', (e) => {
-                        chrome.tabs.create({url: e.target.getAttribute('href')})
-                        return false;
-                    });
+                    // document.querySelector('#credLink').addEventListener('click', (e) => {
+                    //     chrome.tabs.create({url: e.target.getAttribute('href')})
+                    //     return false;
+                    // });
     
                     if (hikeTime){
                         //modifying the fetched times with inputted hike times
@@ -80,6 +90,11 @@ document.addEventListener('DOMContentLoaded', () => {
                         h4goldenHour.textContent = `Golden Hour is at ${goldenHour}`;
                         h4sunset.textContent = `Sunset is at ${sunset}`;
                     };
+
+                    document.querySelector('#credLink').addEventListener('click', (e) => {
+                        chrome.tabs.create({url: e.target.getAttribute('href')})
+                        return false;
+                    });
                 }, 888);
             })
             .catch(error => console.error('Error from response:', error));

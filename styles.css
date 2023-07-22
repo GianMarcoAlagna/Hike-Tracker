@@ -17,44 +17,6 @@ body * {
     margin-top: 10px;
 }
 
-input {
-    background: rgba(13, 13, 13, 0.555);
-    border: 1px solid rgb(45, 45, 45);
-    color: white;
-    border-radius: 5px;
-}
-
-input[type*='text'] {
-    padding: 5px;
-    margin: 3px;
-    width: 130px;
-    height: 30px;
-    font-size: 13px;
-    font-weight: bold;
-}
-
-.text-form {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 300px;
-    height: 200px;
-}
-
-#sub {
-    width: 100px;
-    height: 35px;
-    font-size: large;
-}
-
-input:hover {
-    border: 1px solid rgb(43, 124, 255)
-}
-
-input:active {
-    border: 1px solid rgb(255, 255, 255);
-}
-
 @keyframes open-info {
     from {
         width: 0px;
@@ -87,6 +49,75 @@ input:active {
     }
 }
 
+@keyframes slide-in {
+    from {
+        transform: translatey(-100px);
+    }
+    to {
+        transform: translatey(0);
+    }
+}
+
+@keyframes fade-in {
+    from {
+        transform: translateX(-100px);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0px);
+        opacity: 1;
+    }
+}
+
+input {
+    background: rgba(13, 13, 13, 0.555);
+    border: 1px solid rgb(45, 45, 45);
+    color: white;
+    border-radius: 5px;
+}
+
+input[type*='text'] {
+    padding: 5px;
+    margin: 3px;
+    width: 130px;
+    height: 30px;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+#title-div {
+    color: white;
+    background-color: rgba(0, 0, 0, 0.525);
+    border-radius: 5px;
+    border: 2px solid black;
+    height: 45px;
+    width: 225px;
+    text-align: center;
+}
+
+.text-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 300px;
+    height: 200px;
+    animation: slide-in 1s;
+}
+
+#sub {
+    width: 100px;
+    height: 35px;
+    font-size: large;
+}
+
+input:hover {
+    border: 1px solid rgb(43, 124, 255)
+}
+
+input:active {
+    border: 1px solid rgb(255, 255, 255);
+}
+
 .info-box {
     animation: open-info 5s;
     border-radius: 5px;
@@ -104,19 +135,6 @@ input:active {
     margin-top: 15px;
 }
 
-@keyframes fade-in {
-    from {
-        transform: translateX(-100px);
-        opacity: 0;
-    }
-    to {
-        transform: translateX(0px);
-        opacity: 1;
-    }
-}
-
-
-
 h3 {
     animation: fade-in 5s;
     opacity: 1;
@@ -131,4 +149,15 @@ a:hover {
     text-decoration: underline;
     font-size: large;
     color: rgb(43, 124, 255);
+}
+
+#main-link {
+    text-decoration: none;
+    font-size: 20px;
+}
+
+#main-link:hover {
+    text-decoration: none;
+    font-size: 22px;
+    text-decoration: underline;
 }
