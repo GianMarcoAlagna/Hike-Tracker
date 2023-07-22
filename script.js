@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const invalid = document.createElement('h1');
             invalid.id = 'invalid';
             invalid.textContent = 'Invalid Input please enter a decimal number';
-            invalid.style = 'font-weight: bold; color: red; font-size: small;';
+            invalid.style = 'font-weight: bold; color: red; font-size: small; -webkit-text-stroke: 0.7px black;';
             document.querySelector('.text-form').appendChild(invalid);
             setTimeout(() => {
                 invalid.remove();
